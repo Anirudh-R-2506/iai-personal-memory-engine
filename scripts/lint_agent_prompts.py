@@ -50,8 +50,7 @@ def _violations_in(path: Path) -> list[str]:
     for match in _CALL_FORM.finditer(body_for_check):
         line_no = body_for_check.count("\n", 0, match.start()) + 1
         findings.append(
-            f"{path}:{line_no}: inline `{match.group(1)}(...)` call form forbidden — "
-            f"use ctx_search / ctx_execute_file instead"
+            f"{path}:{line_no}: inline `{match.group(1)}(...)` call form forbidden in agent prompts"
         )
     return findings
 

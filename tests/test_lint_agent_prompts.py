@@ -36,9 +36,8 @@ def _write_clean_agent(path: Path, name: str = "sample") -> None:
         f"tools: Read, Write, Bash\n"
         f"---\n\n"
         f"Body here.\n\n"
-        f"**MCP tools — MANDATORY:** Use context-mode MCP "
-        f"(`ctx_search`, `ctx_batch_execute`) for code search and "
-        f"mempalace MCP for memory. Do NOT use Grep or Glob.\n",
+        f"**MCP tools — MANDATORY:** Use mempalace MCP for memory. "
+        f"Do NOT use Grep or Glob.\n",
         encoding="utf-8",
     )
 
@@ -120,9 +119,8 @@ def test_directive_text_is_not_a_violation(lint_in_tmp):
         "description: directive present in body.\n"
         "tools: Read\n"
         "---\n\n"
-        "**MCP tools — MANDATORY:** Use context-mode MCP "
-        "(`ctx_search`, `ctx_batch_execute`) for code search and "
-        "mempalace MCP for memory. Do NOT use Grep or Glob.\n",
+        "**MCP tools — MANDATORY:** Use mempalace MCP for memory. "
+        "Do NOT use Grep or Glob.\n",
         encoding="utf-8",
     )
     assert mod.main([]) == 0

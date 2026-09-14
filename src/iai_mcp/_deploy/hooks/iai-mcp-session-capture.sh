@@ -125,7 +125,7 @@ if [ -z "$transcript_path" ] && [ -n "$session_id" ]; then
   projects_dir="$claude_root/projects"
   if [ -d "$projects_dir" ]; then
     # Look for the most recent file whose basename starts with session_id.
-    # ls -t (mtime newest first). Avoid `find` per the project's no-grep hook.
+    # Iterate project dirs directly (no `find`) and take the matching basename.
     for d in "$projects_dir"/*/; do
       candidate="${d}${session_id}.jsonl"
       if [ -f "$candidate" ]; then

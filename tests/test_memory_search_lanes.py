@@ -1,4 +1,4 @@
-"""Hybrid scoped search + the live watch loop — the context-mode replacement.
+"""Hybrid scoped search + the live watch loop.
 
 The lexical lane must find EXACT identifiers embeddings blur; the dispatch
 tool merges both lanes under a hints-not-truth frame; the watch tick keeps
