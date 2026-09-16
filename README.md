@@ -6,7 +6,7 @@
 
 <p align="center">
   <b>Keeps every conversation word-for-word and gives your AI agent the right<br>
-  context on every turn — including the old wording when a fact changes.</b>
+  context on every turn.</b>
 </p>
 
 <p align="center">
@@ -41,25 +41,26 @@
 
 ## What it is
 
-Your AI agent forgets everything the moment you close the session. iai-memory
-fixes that, on your own machine. Switch the hooks on and it records both sides of
-every conversation word-for-word, then feeds the agent the part of your history
-that matters on every message — not just when a session starts. No memory file to
-maintain, no “remember this.”
+A local server that speaks the MCP protocol and gives Claude, and any other
+MCP-compatible agent, a long-term memory. It captures every turn of every session
+verbatim, organizes those captures over time into a personal map of who you are,
+and serves a small slice of relevant memory back at the start of each new
+conversation and turn. You never have to say *"remember this"* or *"what did we
+say last time?"*.
 
-When a fact changes, the old one isn't overwritten. The new version is stored and
-linked back to what it replaced, so you can still pull up both. When something
-contradicts itself, recall shows you the conflict instead of quietly handing over
-a stale answer as if it were true.
+I built this for myself. It worked. The benchmarks were mostly for my own
+curiosity.
 
-It's memory built around you and one agent — not a memory API for a multi-tenant
-app, and not a wrapper around someone else's database. What you say is stored
-once, verbatim, and never rewritten. The store, the search, the graph, the
-dashboard: all of it runs on your machine.
+Under the hood it's not a wrapper around someone else's vector store and graph
+library — the parts that matter are my own code: the storage engine, the
+community-detection algorithm, the hyperdimensional memory substrate, and a
+native engine that makes it fast.
 
-The memory style is autistic by design. It keeps the literal wording instead of
-smoothing it into a paraphrase, holds onto precise cues, and leaves rare things
-rare instead of averaging them away. [Why the name](#about-the-name).
+And unlike cloud memory services, there's no API key, no account, and no
+telemetry: the engine, the store, and the embeddings all run locally. The only
+things that leave your machine are the normal model calls your CLI already makes,
+plus one optional nightly consolidation step that asks Claude for a single
+insight through the same subscription.
 
 ---
 
