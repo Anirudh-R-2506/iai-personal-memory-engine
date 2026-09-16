@@ -59,8 +59,8 @@ native engine that makes it fast.
 And unlike cloud memory services, there's no API key, no account, and no
 telemetry: the engine, the store, and the embeddings all run locally. The only
 things that leave your machine are the normal model calls your CLI already makes,
-plus one optional nightly consolidation step that asks Claude for a single
-insight through the same subscription.
+plus one optional nightly consolidation step that asks your model for a single
+insight through the same subscription your CLI already uses.
 
 ---
 
